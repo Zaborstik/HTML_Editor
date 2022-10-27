@@ -1,7 +1,5 @@
 package src;
 
-
-
 import src.actions.*;
 import src.listeners.TextEditMenuListener;
 import src.listeners.UndoMenuListener;
