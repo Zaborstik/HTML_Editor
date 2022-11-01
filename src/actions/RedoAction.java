@@ -1,6 +1,6 @@
 package src.actions;
 
-import com.javarush.task.task32.task3209.View;
+import src.View;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

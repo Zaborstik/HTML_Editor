@@ -1,8 +1,8 @@
 package src;
 
-import com.javarush.task.task32.task3209.listeners.FrameListener;
-import com.javarush.task.task32.task3209.listeners.TabbedPaneChangeListener;
-import com.javarush.task.task32.task3209.listeners.UndoListener;
+import src.listeners.FrameListener;
+import src.listeners.TabbedPaneChangeListener;
+import src.listeners.UndoListener;
 
 import javax.swing.*;
 import javax.swing.undo.UndoManager;

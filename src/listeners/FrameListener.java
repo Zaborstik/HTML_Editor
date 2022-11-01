@@ -1,6 +1,6 @@
 package src.listeners;
 
-import com.javarush.task.task32.task3209.View;
+import src.View;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
