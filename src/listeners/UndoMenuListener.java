@@ -1,6 +1,6 @@
 package src.listeners;
 
-import src.View;
+import com.javarush.task.task32.task3209.View;
 
 import javax.swing.*;
 import javax.swing.event.MenuEvent;

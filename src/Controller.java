@@ -1,6 +1,6 @@
 package src;
 
-import src.listeners.UndoListener;
+import com.javarush.task.task32.task3209.listeners.UndoListener;
 
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
@@ -22,6 +22,7 @@ public class Controller {
     }
 
     public void init(){
+        createNewDocument();
     }
 
     public void exit(){
@@ -59,6 +60,25 @@ public class Controller {
         }
 
         return stringWriter.toString();
+    }
+
+    public void createNewDocument(){
+        view.selectHtmlTab();
+        resetDocument();
+        view.setTitle("HTML редактор");
+        currentFile = null;
+    }
+
+    public void openDocument(){
+
+    }
+
+    public void saveDocument(){
+
+    }
+
+    public void saveDocumentAs(){
+
     }
 
     public static void main(String[] args) {

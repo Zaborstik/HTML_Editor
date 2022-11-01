@@ -1,9 +1,8 @@
 package src;
 
-
-import src.listeners.FrameListener;
-import src.listeners.TabbedPaneChangeListener;
-import src.listeners.UndoListener;
+import com.javarush.task.task32.task3209.listeners.FrameListener;
+import com.javarush.task.task32.task3209.listeners.TabbedPaneChangeListener;
+import com.javarush.task.task32.task3209.listeners.UndoListener;
 
 import javax.swing.*;
 import javax.swing.undo.UndoManager;
@@ -37,12 +36,6 @@ public class View extends JFrame implements ActionListener {
 
     public UndoListener getUndoListener() {
         return undoListener;
-    }
-
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
     }
 
     public void init() {
@@ -88,7 +81,15 @@ public class View extends JFrame implements ActionListener {
     }
 
     public void selectedTabChanged() {
-
+        switch (tabbedPane.getSelectedIndex()){
+            case 0:
+                controller.setPlainText(plainTextPane.getText());
+                break;
+            case 1:
+                plainTextPane.setText(controller.getPlainText());
+                break;
+        }
+        resetUndo();
     }
 
     public boolean canUndo() {
@@ -134,5 +135,28 @@ public class View extends JFrame implements ActionListener {
 
     public void showAbout() {
         JOptionPane.showMessageDialog(this, "Для тебя Диларочка*", "Прога:", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent){
+        switch (actionEvent.getActionCommand()) {
+            case "Новый":
+                controller.createNewDocument();
+                break;
+            case "Открыть":
+                controller.openDocument();
+                break;
+            case "Сохранить":
+                controller.saveDocument();
+                break;
+            case "Сохранить как...":
+                controller.saveDocumentAs();
+                break;
+            case "Выход":
+                controller.exit();
+                break;
+            case "О программе":
+                this.showAbout();
+        }
     }
 }
